@@ -1,0 +1,13 @@
+- alias as the name suggests it is used as an alternative for some predefined commands.
+	syntax:
+		alias p="pwd"
+		alias ls="ls -al"  //a instructs to show hidden files and l instructs to show details about each directories and files.
+		alias l="pwd; ls"  // multiple commands.
+		alias pl ="p; l"   //aliased term can also be written inside.
+		alias ls="ls -al" /etc //arguments can also be passed so that ls always display contents of etc .
+		/ls  //Such an alias can be disabled temporarily .
+
+		alias dir='ls -al | grep ^d'  // single quotes can also be used instead of double .Its output is sent by the pipe to the filter grep, which then searches for lines beginning with the letter d (as all directories have a line returned by ls -al that begins with d). 
+
+		alias df='df -h'  // h stands for human readable and df shows partitions and mount point.
+		alias rmv='rm -i' // i stands for interactivity and rm for removing.

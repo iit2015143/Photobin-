@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+	<head><meta charset="utf-8">
+	<style>
+	form{
+		//background-image:url(../webpic/up10.jpg);
+		display:table;
+		width:50%;
+	}
+	form p{
+		display:table-row;
+	}
+	form label,form input{
+		vertical-align: top;
+		display:table-cell;
+	}
+	form label{
+		background-color: white;
+		color:black;
+		text-align: right;
+	}
+	form input{
+		background-color: pink;
+	}
+	form input:focus{
+		background-color: gray;
+	}
+	</style>
+	</head>
+	<body>
+	<fieldset>
+		<legend>Personal Information</legend>
+		<form enctype="multipart/form-data" method="post" action="../../formhf.php">
+		<p>
+			<label for="fname">Name :</label>
+			<input type="text" name="fname" id="fname" size="40"> <br><br>
+		</p>
+		<p>
+			<label for="lname">Last Name : </label>
+			<input type="text" name="lname" id="lname" size="40"> <br><br>
+		</p>
+		<p>
+			<label for="class">Class :</label>
+			<input type="text" name="class" id="class" size="40"> <br><br>
+		</p>
+		<p>
+			<label for="roll">Roll No :</label>
+			<input type="text" name="roll" id="roll" size="40"> <br><br>
+		</p>
+		<p>
+			<label for="institute">Institute :</label>
+			<input type="text" name="institute" id="institute" size="40"> <br><br>
+		</p>
+		<p>
+			<label for="grade">Grade :</label>
+			<input type="text" name="grade" id="grade" size="40"> <br><br>
+		</p>
+			<input type="file" name="image" id="image"><br />
+			<input type="submit" value="Submit" name="submit">
+		</form>
+	</fieldset>
+	</body>
+</html>

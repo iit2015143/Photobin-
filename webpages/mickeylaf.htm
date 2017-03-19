@@ -1,0 +1,25 @@
+<!DOCTYPE htm>
+<html>
+	<head>
+	<title>mickey smile</title>
+		<script>
+		function change(){
+			var x=document.getElementById("mik");
+			if(x.src.match("p2")){
+			var name=prompt("enter your name");
+			if(name){
+			alert("Hi "+ name + " wait i wil show you where i live");
+			x.src="w.jpg";
+			}}
+			else{
+				x.src="bo.jpg";
+				alert(" AB KYA LE LE MUH ME");
+			}
+		}
+		</script>
+	</head>
+	<body onload="alert('Hey buddy whats up Welcome this is Mickey');"><div style="text-align:center; margin-top:200px">
+		<h1 style="text-align:center; color: blue; font-family:cursive">ClickMe to have a nice ConverSation</h1>
+		<img src="p2.jpg" id="mik" onclick="change();" width="500px" height="500px" style="text-align:center; cursor:pointer"/></div>
+	<body>
+<html>

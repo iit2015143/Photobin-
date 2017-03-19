@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>PhotoBin</title>
+		<style>
+			body{
+				background-color:#c2c2d6;
+			}
+			header{
+				color:#3d3d5c;
+			}
+			input{
+				background-color:#c2c2d6;
+			}
+			input:focus{
+				background-color:#3d3d5c;
+			}
+		</style>
+		<script>
+			function doublesubmit(form){
+				alert("working");
+				form.submit();
+				//form.action= "sample1.php";
+				//form.submit();
+			}
+		</script>
+	</head>
+	<body>
+	<header>
+		<h1>Add Photo:</h1>
+	</header>
+	<section>
+	<fieldset>
+	<legend>Album info:</legend><br /><br />
+	<form method="post" action="sample.php" enctype="multipart/form-data">
+		Album Name : <input type="text" name="name" id="name" placeholder="Enter Name"><br /><br />
+		File &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: <input type="file" name="image" id="image"> <br /><br />
+		<input type="button" onclick="doublesubmit(this.form);" value="Upload" name="upload">
+	</form><br /><br />
+	</fieldset>
+	</section>
+	</body>
+</html>

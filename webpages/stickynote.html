@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head><meta charset="utf-8">
+			<title>stickyNotes</title>
+			<script>
+			window.onload = function () {
+				var stickyArray=getStickyArray();
+				if(stickyArray){
+					for(i=0; i<stickyArray.length; i++){
+						var li = document.createElement("li");
+						var ul = document.getElementById("ullu");
+						var key = stickyArray[i];
+						var value = localStorage[key];
+						li.innerHTML = value;
+						ul.appendChild(li);
+					}
+				}
+				var button = document.getElementById("add");
+				button.onclick = handleclick;
+				var button2 = document.getElementById("clear");
+				button2.onclick = handleclear;
+			};
+			function handleclear() {
+				localStorage.clear();
+				window.location="stickynote.html";
+			}
+			function getStickyArray(){
+				var stickyArray=localStorage["arrayKey"];
+				if (stickyArray){
+					stickyArray=JSON.parse(stickyArray);
+					return stickyArray;
+				}
+				else{
+					stickyArray=[];
+					localStorage.setItem("arrayKey",JSON.stringify(stickyArray));
+					return stickyArray;
+				}
+			}
+			function handleclick() {
+				var rat = document.getElementById("gana");
+				var value = rat.value;
+				if(value){
+					var li = document.createElement("li");
+					var ul = document.getElementById("ullu");
+					li.innerHTML = document.getElementById("gana").value;
+					ul.appendChild(li);
+					var stickyArray = getStickyArray();
+					var key = "sticker"+ localStorage.length;
+					stickyArray.push(key);
+					localStorage.setItem("arrayKey",JSON.stringify(stickyArray));
+					localStorage.setItem(key, value);}
+				else{
+					alert("enter a song");
+				}
+			}
+			</script>
+			<style>
+			body{
+				background-color:pink;
+			}
+			ul{
+				list-style-type:none;
+			}
+			li {
+				border:medium inset black;
+				width:10%;
+				float:left;
+				font-size:1.2em;
+				font-family: verdana;
+				background-color:red;
+				padding:5px;
+				margin:5px;
+			}
+			</style>
+	</head>
+	<body>
+		<form>
+			<input type="text" size="40" id="gana" placeholder="ramarama">
+			<input type="button" id="add" value="AddSong">
+			<input type="button" id="clear" value="ClearSong">
+		</form>
+		<ul id="ullu">
+		</ul>
+	</body>
+</html>

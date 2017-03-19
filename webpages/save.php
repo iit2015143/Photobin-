@@ -1,0 +1,1 @@
+<a href="delete.php?id=' . $row['id'] . '&name=">DELETE</a>
